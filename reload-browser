@@ -1,0 +1,21 @@
+#!/bin/bash
+
+shopt -s nocasematch
+
+BROWSER=$1
+URL=$2
+
+if [[ $BROWSER =~ chrome ]]; then
+  BROWSER="Google Chrome"
+else
+  BROWSER=$(perl -e "print ucfirst('$BROWSER')")
+fi
+
+osascript &> /dev/null <<__END
+  tell application "${BROWSER}"
+    set activeTab to last tab of window 1 whose "${URL:-.}" is in URL
+    set URL of activeTab to URL of activeTab
+  end tell
+__END
+
+echo "$BROWSER refreshed [$URL]"
