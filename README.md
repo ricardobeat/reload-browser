@@ -14,6 +14,16 @@ Uses a sneaky four-line AppleScript that works across all[1] browsers.
     reload-browser safari localhost
 ```
 
+### Install
+
+Copy the `reload-browser` script to your favorite bin folder (`/usr/local/bin`, `~/bin`). Or, if you trust me, and github:
+
+`curl -o /usr/local/bin/reload-browser https://raw.githubusercontent.com/ricardobeat/reload-browser/master/reload-browser && chmod +x /usr/local/bin/reload-browser`
+
+### TODO
+
+- publish executable somewhere
+
 _[1] not all_
 
 _[2] Firefox doesn't work_
